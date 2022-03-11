@@ -1,6 +1,6 @@
 <------------------------------------------------------------------------------------------->
 (1) Introduction
-
+<------------------------------------------------------------------------------------------->
 Angular is js framework to build Single-Page-Application
 Angular version: AngularJS(V1), after V2 are same, V3 skipped.
 Install Angular: sudo npm install -g @angular/cli
@@ -19,16 +19,85 @@ property binding [property]="variable"
 event binding (event)="func($event)"
 two way binding [(ngModle)]="variable"
 
+<p *ngIf="true; else localRef"></p>
+<ng-template #localRef></ng-template>
+local ref is only used in html, but we can pass to function.
+
+<p *ngFor="let item of array;let i= index">
+
+<p [ngStyle]="{backgroundColor:'red'}">
+<p [ngClass]="{className:expresion}"
+
+debugging = webpack/./src
+
 <------------------------------------------------------------------------------------------->
 (3) Components & Databinding
 <------------------------------------------------------------------------------------------->
+Custom Property binding:
+parent: <p [prop]="var"></p>
+child: @Input('prop') var2;
+
+Custom Event binding:
+parent: <p (customE)="doSomething($event)"></p>
+child:
+@Output('customE') customEvnt = new EventEmitter<type>() 
+onClick(){
+  cursomEvnt.emit(data);
+}
+
+View Encapsulation:
+@Component({encapsulation:ViewEncapsulation.Emulated})
+now style of this component will apply to global.
+
+ViewChild:
+<p #localRef></p>
+@ViewChild('localRef') var;  // this var type is ElementRef,set After ngAfterViewInit,not ngInit
+
+ContentChild:
+parent: <app-child>...<p #localRef></p>...</app-child>   // we can use this localref in both component.
+child: <>...<ng-content></ng-content>...</>
+child ts: @ContentChild('localRef') var;     // this will be set after ngAfterContentInit
+
+NgContent:
+parent: <app-component>somehtml</app-component>
+child: <>...<ng-content></ng-content>...</>
+
+LifeCycle:
+ngOnChanges,ngOnInit,ngDoCheck,ngOnDestroy
+ngAfterContentInit,ngAfterContentChecked,ngAfterViewInit,ngAfterViewChecked
 
 
 <------------------------------------------------------------------------------------------->
 (4) Directives
 <------------------------------------------------------------------------------------------->
+attribute directive vs structural directive
+* structural directive,it ch the dom
+can not use two structural directive on one element.
 
+<p [ngSwith]='value'>
+ <p *ngSwitchCase="1">One</p>
+ <p *ngSwitchCase="2">Two</p>
+ <p *ngSwitchCase="3">Three</p>
+</p>
 
+custom directive:
+@Directive({selector:'[drname]'});
+constructor(private el:ElementRef){}
+ngOnInit(){el.nativeElement.style.backgroundColor='red'}
+
+better aproach:
+constructor(private el:ElementRef,private r:Renderer2){}
+ngOnInit(){renderer.setStyle(el.nativeElement,'background-color','red'}
+
+using hostlistner&hostbinding:
+@HostBinding('style.backgroundColor') var;
+@HostListner('mouseenter') fun1(){ var='blue' }
+@HostListner('mouseleave') fun2(){ var='transparent' }
+
+<p *ngIf="var"></p>   // is same as
+<ng-template [ngIf]="var"></ng-template>
+
+//todo: video 101
 <------------------------------------------------------------------------------------------->
 (5) Services & DI
 <------------------------------------------------------------------------------------------->
