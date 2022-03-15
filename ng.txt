@@ -1,17 +1,19 @@
 <------------------------------------------------------------------------------------------->
 (1) Introduction
 <------------------------------------------------------------------------------------------->
+
 Angular is js framework to build Single-Page-Application
-Angular version: AngularJS(V1), after V2 are same, V3 skipped.
+Angular version: AngularJS(V1), after V2 all are same, V3 skipped.
 Install Angular: sudo npm install -g @angular/cli
-Create project: ng new name
-Run project: ng serve
+Create project: ng new project_name
+Run project: ng serve -o
 Add Bootstrap: npm install --save bootstrap@3 and add style to angular.json
 
 
 <------------------------------------------------------------------------------------------->
 (2) The Basics
 <------------------------------------------------------------------------------------------->
+
 @Component = decorator ,It has selector,template or templateUrl (necessary),styles,styleUrls
 bootstrap = load in index.html, other components in declaration, other modules in imports
 string interpolation {{}} in between any expression returning string
@@ -33,6 +35,7 @@ debugging = webpack/./src
 <------------------------------------------------------------------------------------------->
 (3) Components & Databinding
 <------------------------------------------------------------------------------------------->
+
 Custom Property binding:
 parent: <p [prop]="var"></p>
 child: @Input('prop') var2;
@@ -70,6 +73,7 @@ ngAfterContentInit,ngAfterContentChecked,ngAfterViewInit,ngAfterViewChecked
 <------------------------------------------------------------------------------------------->
 (4) Directives
 <------------------------------------------------------------------------------------------->
+
 attribute directive vs structural directive
 * structural directive,it ch the dom
 can not use two structural directive on one element.
@@ -98,14 +102,33 @@ using hostlistner&hostbinding:
 <ng-template [ngIf]="var"></ng-template>
 
 //todo: video 101
+
 <------------------------------------------------------------------------------------------->
 (5) Services & DI
 <------------------------------------------------------------------------------------------->
 
 
+command: ng g s service_name
+
+Basic Service:
+@Injectable({providedIn:root})
+export class MyService{
+  logMethod(){}
+}
+use in component:
+constructor(private mySerVar:MyService){}
+this.mySerVar.logMethod();
+
+In above example => creates only one instance of service and provides to all component.
+@Component({providers:[MyService]})  => only for this and it's child components.
+@NgModule({providers:[MyService]})  => all component of this module
+
+we can create event emitter variable in service and emit from component and subscribe to event emitter anywhere
+
 <------------------------------------------------------------------------------------------->
 (6) Routing
 <------------------------------------------------------------------------------------------->
+
 
 
 <------------------------------------------------------------------------------------------->
