@@ -129,7 +129,16 @@ we can create event emitter variable in service and emit from component and subs
 (6) Routing
 <------------------------------------------------------------------------------------------->
 
+//temp
+in ng module
+const appRoutes:Routes = [
+  { path:'',component:Homepage}
+  { path:'users',component:UserComponent}
+]
+imports:[RouterModule.forRoot(appRoutes)]
 
+in app comp =>  <router-outlet></router-outlet>
+in links => <a routerLink="/">Home</a> or [routerLink]="['/users','id']"
 
 <------------------------------------------------------------------------------------------->
 (7) Observables
