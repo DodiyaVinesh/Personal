@@ -129,7 +129,6 @@ we can create event emitter variable in service and emit from component and subs
 (6) Routing
 <------------------------------------------------------------------------------------------->
 
-//temp
 in ng module
 const appRoutes:Routes = [
   { path:'',component:Homepage}
@@ -139,6 +138,17 @@ imports:[RouterModule.forRoot(appRoutes)]
 
 in app comp =>  <router-outlet></router-outlet>
 in links => <a routerLink="/">Home</a> or [routerLink]="['/users','id']"
+routerLinkActive="className" 
+[routerLinkActiveOption]="{exact:true}"
+
+programatically navigate:
+=>we can add Router,ActivatedRoute to constructor
+router.navigate(['servers'],{relativeTo:activeRoute})
+
+{path:'/user/:id',component:any}
+get params: activeRoute.snapshot.params["id"];
+or : activeRoute.params.subscribe((newPara)=>dothing(newPara))
+
 
 <------------------------------------------------------------------------------------------->
 (7) Observables
