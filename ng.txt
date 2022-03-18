@@ -131,8 +131,10 @@ we can create event emitter variable in service and emit from component and subs
 
 in ng module
 const appRoutes:Routes = [
-  { path:'',component:Homepage}
-  { path:'users',component:UserComponent}
+  { path:'',component:Homepage },
+  { path:'users',component:UserComponent },
+  { path:'/404',component:404Component },
+  { path:'**',redirectTo:'/404' }
 ]
 imports:[RouterModule.forRoot(appRoutes)]
 
@@ -140,14 +142,20 @@ in app comp =>  <router-outlet></router-outlet>
 in links => <a routerLink="/">Home</a> or [routerLink]="['/users','id']"
 routerLinkActive="className" 
 [routerLinkActiveOption]="{exact:true}"
+[queryParams]="{allowEdit:'1'}"
+fragment="loading"
 
 programatically navigate:
 =>we can add Router,ActivatedRoute to constructor
-router.navigate(['servers'],{relativeTo:activeRoute})
+router.navigate(['servers'],{relativeTo:activeRoute,
+    queryParams:{allowEdit:'1'},fragment:'loading',queryParamsHandling:'preserve'})
 
 {path:'/user/:id',component:any}
 get params: activeRoute.snapshot.params["id"];
+get queryParams: activeRoute.snapshot.queryParams;
+get fragment: activeRoute.snapshot.fragment;
 or : activeRoute.params.subscribe((newPara)=>dothing(newPara))
+
 
 
 <------------------------------------------------------------------------------------------->
