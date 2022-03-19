@@ -156,13 +156,44 @@ get queryParams: activeRoute.snapshot.queryParams;
 get fragment: activeRoute.snapshot.fragment;
 or : activeRoute.params.subscribe((newPara)=>dothing(newPara))
 
-
+//TODO: route guard
 
 <------------------------------------------------------------------------------------------->
 (7) Observables
 <------------------------------------------------------------------------------------------->
 
+interval(1000).subscribe(i=>clg(i));
 
+custom observable:
+const customObs = Observable.create(observer=>{
+  let count=0;
+  setInterval(()=>{
+    observer.next(count);
+    // observer.error(new Error("this is error msg"));
+    // observer.complete();
+    count++;
+  },1000)
+});
+
+customObs.subscribe(data=>{
+  console.log(data);
+},error=>{
+  console.log(error.message);
+},()=>{
+  console.log("completed");
+});
+
+operators:
+observable.pipe(filter(data=>{
+  return data%2==0?true:false;
+}),map(data=>{
+  return "data is "+data;
+})).subscribe(data=>{
+  console.log(data);
+})
+
+eventEmmiter: .emit(data),type: EventEmitter()
+subject:  .next(data)
 <------------------------------------------------------------------------------------------->
 (8) Forms
 <------------------------------------------------------------------------------------------->
