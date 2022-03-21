@@ -197,7 +197,34 @@ subject:  .next(data)
 <------------------------------------------------------------------------------------------->
 (8) Forms
 <------------------------------------------------------------------------------------------->
+template driven:
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+<input name="email" ngModel email >
+onSubmit(myForm :ngForm){}
 
+we can use ngModel without binding,one way,and also two way binding.
+classes we can add style: ng-valid,ng-invalid,ng-touched,ng-dirty,...
+
+<input #uname="ngModel" >
+<p *ngIf="uname.invalid && uname.touched" >invalid email</p>
+for group: <div #mygroup="ngModelGroup" ></div>
+
+@ViewChild('formref') myForm:NgForm;
+myForm.setValue({fullObj of form})
+myForm.patchValue({only field want to update})
+myForm.reset();
+
+Reactive aproach:
+
+myForm = new FormGroup({
+  'username':new FormControl('defalut',Validators.required),
+  'email': new FormControl(null,[Validators.required,Validators.email])
+})
+inHTML:
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+<input formControlName="username" >
+<input formControlName="email" >
+<p *ngIf="myForm.get('username').invalid">Invalid data</p>
 
 <------------------------------------------------------------------------------------------->
 (9) Pipes
