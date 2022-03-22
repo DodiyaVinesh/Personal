@@ -19,11 +19,10 @@ bootstrap = load in index.html, other components in declaration, other modules i
 string interpolation {{}} in between any expression returning string
 property binding [property]="variable"
 event binding (event)="func($event)"
-two way binding [(ngModle)]="variable"
+two way binding [(ngModel)]="variable"
 
 <p *ngIf="true; else localRef"></p>
 <ng-template #localRef></ng-template>
-local ref is only used in html, but we can pass to function.
 
 <p *ngFor="let item of array;let i= index">
 
@@ -75,7 +74,7 @@ ngAfterContentInit,ngAfterContentChecked,ngAfterViewInit,ngAfterViewChecked
 <------------------------------------------------------------------------------------------->
 
 attribute directive vs structural directive
-* structural directive,it ch the dom
+* structural directive,it change the dom
 can not use two structural directive on one element.
 
 <p [ngSwith]='value'>
@@ -91,7 +90,7 @@ ngOnInit(){el.nativeElement.style.backgroundColor='red'}
 
 better aproach:
 constructor(private el:ElementRef,private r:Renderer2){}
-ngOnInit(){renderer.setStyle(el.nativeElement,'background-color','red'}
+ngOnInit(){r.setStyle(el.nativeElement,'background-color','red'}
 
 using hostlistner&hostbinding:
 @HostBinding('style.backgroundColor') var;
