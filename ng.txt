@@ -234,6 +234,18 @@ inHTML:
 
 {{ myDate | date:'fullDate':...| uppercase }}
 
+custom pipe:
+@Pipe({
+ name: 'filter',
+ pure: true
+})
+export class myPipe implements PipeTransform{
+ transform(value:any){
+  return value.substr(0,5);
+ }
+}
+async pipe useful
+
 <------------------------------------------------------------------------------------------->
 (10) Http
 <------------------------------------------------------------------------------------------->
