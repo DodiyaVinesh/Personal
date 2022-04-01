@@ -7,10 +7,7 @@ Create project: `ng new project_name`\
 Run project: `ng serve -o`\
 Add Bootstrap: `npm install --save bootstrap@3` and add style to angular.json\
 
-
-<------------------------------------------------------------------------------------------->
 #(2) The Basics#
-<------------------------------------------------------------------------------------------->
 
 `@Component` = decorator ,It has selector,template or templateUrl (necessary),styles,styleUrls\
 bootstrap = load in index.html, other components in declaration, other modules in imports\
@@ -24,28 +21,26 @@ two way binding `[(ngModel)]="variable"`\
 
 `<p *ngFor="let item of array;let i= index">`\
 
-`<p [ngStyle]="{backgroundColor:'red'}">\
-<p [ngClass]="{className:expresion}"`\
+`<p [ngStyle]="{backgroundColor:'red'}">`\
+`<p [ngClass]="{className:expresion}"`\
 
 debugging = webpack/./src\
 
-<------------------------------------------------------------------------------------------->
 (3) Components & Databinding
-<------------------------------------------------------------------------------------------->
 
-Custom Property binding:
-parent: <p [prop]="var"></p>
-child: @Input('prop') var2;
+Custom Property binding:\
+parent: `<p [prop]="var"></p>`\
+child: `@Input('prop') var2;`\
 
-Custom Event binding:
-parent: <p (customE)="doSomething($event)"></p>
-child:
-@Output('customE') customEvnt = new EventEmitter<type>() 
-onClick(){
-  cursomEvnt.emit(data);
-}
+Custom Event binding:\
+parent: `<p (customE)="doSomething($event)"></p>`\
+child:\
+`@Output('customE') customEvnt = new EventEmitter<type>();`\
+`onClick(){`\
+`  cursomEvnt.emit(data);`\
+`}`\
 
-View Encapsulation:
+View Encapsulation:\
 @Component({encapsulation:ViewEncapsulation.Emulated})
 now style of this component will apply to global.
 
