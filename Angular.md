@@ -11,7 +11,7 @@ Add Bootstrap: npm install --save bootstrap@3 and add style to angular.json
 
 
 <------------------------------------------------------------------------------------------->
-(2) The Basics
+#(2) The Basics#
 <------------------------------------------------------------------------------------------->
 
 @Component = decorator ,It has selector,template or templateUrl (necessary),styles,styleUrls
@@ -21,8 +21,8 @@ property binding [property]="variable"
 event binding (event)="func($event)"
 two way binding [(ngModel)]="variable"
 
-<p *ngIf="true; else localRef"></p>
-<ng-template #localRef></ng-template>
+`<p *ngIf="true; else localRef"></p>
+<ng-template #localRef></ng-template>`
 
 <p *ngFor="let item of array;let i= index">
 
