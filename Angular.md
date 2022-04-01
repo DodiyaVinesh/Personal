@@ -35,9 +35,9 @@ child: `@Input('prop') var2;`\
 Custom Event binding:\
 parent: `<p (customE)="doSomething($event)"></p>`\
 child:\
-`@Output('customE') customEvnt = new EventEmitter<type>();\
-onClick(){\
-  cursomEvnt.emit(data);\
+`@Output('customE') customEvnt = new EventEmitter<type>();<br />
+onClick(){<br />
+  cursomEvnt.emit(data);<br />
 }`
 
 View Encapsulation:\
