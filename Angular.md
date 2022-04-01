@@ -1,33 +1,33 @@
 (1) Introduction
 
-Angular is js framework to build Single-Page-Application
-Angular version: AngularJS(V1), after V2 all are same, V3 skipped.
-Install Angular: `sudo npm install -g @angular/cli`
-Create project: `ng new project_name`
-Run project: `ng serve -o`
-Add Bootstrap: `npm install --save bootstrap@3` and add style to angular.json
+Angular is js framework to build Single-Page-Application\
+Angular version: AngularJS(V1), after V2 all are same, V3 skipped.\
+Install Angular: `sudo npm install -g @angular/cli`\
+Create project: `ng new project_name`\
+Run project: `ng serve -o`\
+Add Bootstrap: `npm install --save bootstrap@3` and add style to angular.json\
 
 
 <------------------------------------------------------------------------------------------->
 #(2) The Basics#
 <------------------------------------------------------------------------------------------->
 
-`@Component` = decorator ,It has selector,template or templateUrl (necessary),styles,styleUrls
-bootstrap = load in index.html, other components in declaration, other modules in imports
-string interpolation {{}} in between any expression returning string
-property binding `[property]="variable"`
-event binding `(event)="func($event)"`
-two way binding `[(ngModel)]="variable"`
+`@Component` = decorator ,It has selector,template or templateUrl (necessary),styles,styleUrls\
+bootstrap = load in index.html, other components in declaration, other modules in imports\
+string interpolation {{}} in between any expression returning string\
+property binding `[property]="variable"`\
+event binding `(event)="func($event)"`\
+two way binding `[(ngModel)]="variable"`\
 
-`<p *ngIf="true; else localRef"></p>
-<ng-template #localRef></ng-template>`
+`<p *ngIf="true; else localRef"></p>\
+<ng-template #localRef></ng-template>`\
 
-`<p *ngFor="let item of array;let i= index">`
+`<p *ngFor="let item of array;let i= index">`\
 
-`<p [ngStyle]="{backgroundColor:'red'}">
-<p [ngClass]="{className:expresion}"`
+`<p [ngStyle]="{backgroundColor:'red'}">\
+<p [ngClass]="{className:expresion}"`\
 
-debugging = webpack/./src
+debugging = webpack/./src\
 
 <------------------------------------------------------------------------------------------->
 (3) Components & Databinding
