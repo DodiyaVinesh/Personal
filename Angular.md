@@ -1,4 +1,4 @@
-(1) Introduction
+# (1) Introduction #
 
 Angular is js framework to build Single-Page-Application\
 Angular version: AngularJS(V1), after V2 all are same, V3 skipped.\
@@ -7,7 +7,7 @@ Create project: `ng new project_name`\
 Run project: `ng serve -o`\
 Add Bootstrap: `npm install --save bootstrap@3` and add style to angular.json\
 
-#(2) The Basics#
+# (2) The Basics #
 
 `@Component` = decorator ,It has selector,template or templateUrl (necessary),styles,styleUrls\
 bootstrap = load in index.html, other components in declaration, other modules in imports\
@@ -35,10 +35,10 @@ child: `@Input('prop') var2;`\
 Custom Event binding:\
 parent: `<p (customE)="doSomething($event)"></p>`\
 child:\
-`@Output('customE') customEvnt = new EventEmitter<type>();`\
-`onClick(){`\
-`  cursomEvnt.emit(data);`\
-`}`\
+`@Output('customE') customEvnt = new EventEmitter<type>();
+onClick(){
+  cursomEvnt.emit(data);
+}`
 
 View Encapsulation:\
 @Component({encapsulation:ViewEncapsulation.Emulated})
