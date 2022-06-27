@@ -18,11 +18,12 @@ and add style to angular.json
 
 # (2) The Basics #
 
-### @Component ### \
+### @Component ###
 - It is Decorator, It has selector,template or templateUrl (necessary),styles,styleUrls\
-- bootstrap => load in index.html, other components in declaration, other modules in imports\
+- bootstrap load in index.html, other components in declaration, other modules in imports\
 - string interpolation {{}} in between any expression returning string\
-- property binding `[property]="variable"`\
+- property binding 
+> `[property]="variable"`\
 - event binding `(event)="func($event)"`\
 - two way binding `[(ngModel)]="variable"`\
 
