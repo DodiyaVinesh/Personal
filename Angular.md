@@ -1,7 +1,7 @@
 # (1) Introduction #
 
 Angular is js framework to build Single-Page-Application\
-Angular version: AngularJS(V1), after V2 all are same, V3 skipped.\
+Angular version: AngularJS(V1), after V2 all are same, V3 skipped.\\
 Install Angular:\
 ```sudo npm install -g @angular/cli```\
 Create project:\
