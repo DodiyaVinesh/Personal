@@ -26,10 +26,11 @@ and add style to angular.json
 > [property]="variable"
 - event binding 
 > (event)="func($event)"
-- two way binding `[(ngModel)]="variable"`\
+- two way binding in input
+> [(ngModel)]="variable"
 
-{{{<p *ngIf="true; else localRef"></p>\
-<ng-template #localRef></ng-template>`}}}\
+```<p *ngIf="true; else localRef"></p>\
+<ng-template #localRef></ng-template>```
 
 `<p *ngFor="let item of array;let i= index">`\
 
