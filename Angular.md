@@ -29,8 +29,10 @@ and add style to angular.json
 - two way binding in input
 > [(ngModel)]="variable"
 
-```<p *ngIf="true; else localRef"></p>\
-<ng-template #localRef></ng-template>```
+```
+<p *ngIf="true; else localRef"></p>
+<ng-template #localRef></ng-template>
+```
 
 `<p *ngFor="let item of array;let i= index">`\
 
