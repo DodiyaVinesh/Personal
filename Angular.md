@@ -10,7 +10,7 @@ Create project:\
 ```ng new project_name```\
 \
 Run project:\
-```ng serve -o```
+```ng serve -o```\
 \
 Add Bootstrap:\
 ```npm install --save bootstrap@3```\
