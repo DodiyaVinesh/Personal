@@ -14,7 +14,7 @@ Run project:\
 \
 Add Bootstrap:\
 ```npm install --save bootstrap@3```\
-and add style to angular.json\
+and add style to angular.json
 
 # (2) The Basics #
 
