@@ -2,10 +2,15 @@
 
 Angular is js framework to build Single-Page-Application\
 Angular version: AngularJS(V1), after V2 all are same, V3 skipped.\
-Install Angular: `sudo npm install -g @angular/cli`\
-Create project: `ng new project_name`\
-Run project: `ng serve -o`\
-Add Bootstrap: `npm install --save bootstrap@3` and add style to angular.json\
+Install Angular: 
+> sudo npm install -g @angular/cli\
+Create project: 
+> ng new project_name\
+Run project: 
+> ng serve -o\
+Add Bootstrap: 
+> npm install --save bootstrap@3
+and add style to angular.json\
 
 # (2) The Basics #
 
