@@ -16,8 +16,8 @@ property binding `[property]="variable"`\
 event binding `(event)="func($event)"`\
 two way binding `[(ngModel)]="variable"`\
 
-`<p *ngIf="true; else localRef"></p>\
-<ng-template #localRef></ng-template>`\
+{{<p *ngIf="true; else localRef"></p>\
+<ng-template #localRef></ng-template>`}}\
 
 `<p *ngFor="let item of array;let i= index">`\
 
